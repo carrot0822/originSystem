@@ -30,6 +30,21 @@ export default new Router({
                     icon: 'dashboard'
                 }
             }]
+        },
+        {
+            path: '/test',
+            component: Home,
+            redirect: '/test/index',
+            children: [{
+                path: 'index',
+                name: 'test',
+                component: () => import('../view/vueTest/test.vue'),
+                meta: {
+                    title: '首页测试',
+                    icon: 'dashboard'
+                }
+            }]
         }
+        
     ]
 })
